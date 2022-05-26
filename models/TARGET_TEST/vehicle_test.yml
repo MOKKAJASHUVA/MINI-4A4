@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: vehicle_test
+    columns: 
+      - name: VEHICLE_REFERENCE || VEHICLE_SAT_HASH || SAT_EFF_DATE
+        tests:
+          - not_null
+

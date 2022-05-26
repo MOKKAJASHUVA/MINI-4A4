@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: target_src
+    database: dev_accidents_db
+    schema: landing_schema
+    tables:
+      - name: location_mapping
+      - name: accident_ref

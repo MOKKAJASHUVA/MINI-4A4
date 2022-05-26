@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: casualty_sat
+    columns: 
+      - name: CASUALTY_REFERENCE || CASUALTY_SAT_HASH || SAT_EFF_DATE
+        tests:
+          - not_null
+        

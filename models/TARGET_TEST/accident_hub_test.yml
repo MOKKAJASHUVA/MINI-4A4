@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: accident_hub
+    columns: 
+      - name: HUB_ACCIDENT_HASH
+        tests:
+          - not_null
+          

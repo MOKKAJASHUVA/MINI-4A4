@@ -1,0 +1,35 @@
+with vehicle_data as (
+    select
+        cast(ACCIDENT_INDEX as varchar(100)) as ACCIDENT_INDEX,
+        cast(ACCIDENT_YEAR as  number(4)) as ACCIDENT_YEAR,
+        cast(ACCIDENT_REFERENCE as varchar(15)) as ACCIDENT_REFERENCE,
+        cast(VEHICLE_REFERENCE as varchar(15)) as VEHICLE_REFERENCE,
+        cast(VEHICLE_TYPE as number(3)) as VEHICLE_TYPE,
+        cast(towing_and_articulation as number(1))as towing_and_articulation,
+        cast(vehicle_manoeuvre as number(2))as  vehicle_manoeuvre,
+        cast(vehicle_direction_from as number(1))as vehicle_direction_from ,
+        cast(vehicle_direction_to as  number(1))as vehicle_direction_to,
+        cast(vehicle_location_restricted_lane as number(2))as vehicle_location_restricted_lane,
+        cast(junction_location as  number(1))as junction_location ,
+        cast(skidding_and_overturning as number(1))as skidding_and_overturning,
+        cast(hit_object_in_carriageway as number(2))as hit_object_in_carriageway,
+        cast( vehicle_leaving_carriageway as number(1))as vehicle_leaving_carriageway,
+        cast( hit_object_off_carriageway as number(2))as hit_object_off_carriageway ,
+        cast(first_point_of_impact as number(1))as first_point_of_impact,
+        cast( vehicle_left_hand_drive  as number(1))as vehicle_left_hand_drive ,
+        cast( journey_purpose_of_driver  as number(2))as journey_purpose_of_driver  ,
+        cast( sex_of_driver as number(1))as sex_of_driver ,
+        cast( age_of_driver   as number(3))as age_of_driver   ,
+        cast( age_band_of_driver as number(3))as age_band_of_driver,
+        cast( engine_capacity_cc as number(5))as engine_capacity_cc ,
+        cast( propulsion_code as number(2))as propulsion_code ,
+        cast( age_of_vehicle  as number(3))as age_of_vehicle  ,
+        cast( generic_make_model as varchar(200))as generic_make_model,
+        cast( driver_imd_decile as number(2))as driver_imd_decile ,
+        cast(driver_home_area_type as number(1))as driver_home_area_type,
+        cast( hub_accident_hash as varchar(200))as hub_accident_hash ,
+        cast( inserted_by as varchar(200))as inserted_by,
+        cast(SAT_EFF_DATE as timestamp) as  SAT_EFF_DATE
+    from {{ source('accident_src', 'vehicle_landing') }}
+)
+select * from vehicle_data
