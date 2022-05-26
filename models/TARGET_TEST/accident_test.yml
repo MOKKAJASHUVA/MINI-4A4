@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: accident_sat
+    columns: 
+      - name: ACCIDENT_SAT_HASH
+        tests:
+          - not_null
+      - name: SAT_EFF_DATE
+        tests:
+          - not_null
+
