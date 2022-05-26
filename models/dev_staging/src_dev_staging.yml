@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: accident_src
+    database: dev_accidents_db
+    schema: landing_schema
+    tables:
+      - name: accident_landing
+      - name: vehicle_landing
+      - name: casualty_landing
+      
