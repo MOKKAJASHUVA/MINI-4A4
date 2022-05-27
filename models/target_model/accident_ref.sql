@@ -14,3 +14,4 @@ accident_ref as
 )
 
 select * from accident_ref
+
