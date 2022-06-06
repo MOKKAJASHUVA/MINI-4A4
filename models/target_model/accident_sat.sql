@@ -59,6 +59,6 @@ from accident_data
 
   where SAT_EFF_DATE > (select coalesce(max(SAT_EFF_DATE),'2022-01-02 16:00:00 +00:00') from {{ this }})
   AND
-  accident_sat_hash in ( select HUB_ACCIDENT_HASH from hub_data )
+  accident_sat_hash in ( select UB_ACCIDENT_HASH from hub_data )
 
 {% endif %}
