@@ -16,6 +16,6 @@ from {{ ref('stg_accident') }}
   where 
   (select count(HUB_ACCIDENT_HASH) from {{ this }}) = 0 
   OR 
-  (HUB_ACCIDENT_HASH not in (select HUB_ACCIDENT_HASH from {{ this }}))
+  (HUB_ACCIDENT_HASH not in (select HUB_ACCIDENT from {{ this }}))
 
 {% endif %}
